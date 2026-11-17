@@ -5,6 +5,7 @@ dist/
 !.env.example
 data/
 .venv/
+mobile-app/
 __pycache__/
 *.pyc
 *.tsbuildinfo

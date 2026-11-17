@@ -31,3 +31,17 @@
 - [ ] Import the full Lensfun XML database into SQLite and make custom kit creation persist.
 - [ ] Replace the local demo branches with live Gemini/Fal/Replicate/ComfyUI/Ollama adapters and connect the frontend to provider-backed media.
 - [ ] Persist visual-delta analysis and session history in SQLite, including the full bokeh/motion/tint JSON contract.
+
+## Mobile builder control plane
+
+- [x] Present a portrait-first mobile app shell with Build, Preview, Access, and Project navigation.
+- [x] Use interactive provider cards for Google Gemini, OpenAI-compatible endpoints, and local Ollama; do not mark an empty credential as connected.
+- [x] Show the storage plan, optional Ollama model cache, explicit permission toggles, and a consent-gated first-run setup sheet.
+- [x] Show an Expo Go QR preview handoff and a GitHub sync boundary labeled optional / paid-plan connector.
+- [x] Provide `pnpm mobile:bootstrap` as a dry-run-first companion that requires explicit install, network, and storage consent flags.
+
+## Native builder follow-up
+
+- [ ] Materialize and maintain the generated Expo Router app in the user-selected local project directory.
+- [ ] Connect the current Metro session to the QR handoff and implement actual native camera, filesystem, and OS permission bridges.
+- [ ] Add an authenticated GitHub connector for two-way sync without placing repository credentials in the client bundle.

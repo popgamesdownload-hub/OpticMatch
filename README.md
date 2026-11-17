@@ -1,8 +1,8 @@
 # OpticMatch
 
-OpticMatch is a privacy-first, self-hosted camera exposure and look reverse-engineer. Start with a smartphone reference frame, shape three visual edit branches, then turn the approved look into a dial sheet for your camera and lens.
+OpticMatch is a privacy-first, open-source mobile builder for a camera exposure and look reverse-engineer. Start with a smartphone reference frame, shape three visual edit branches, then turn the approved look into a dial sheet for your camera and lens.
 
-The current frontend preview runs fully in demo mode so contributors can explore the product without an API key. The repository also includes the requested FastAPI/SQLite-ready backend starter and a Docker Compose contract for a local deployment.
+The current frontend preview is a portrait-first control plane inspired by mobile app builders: it has interactive provider cards, a local Ollama option, a trust center for storage and permissions, an Expo Go QR handoff, and a project screen for GitHub sync boundaries. It runs in demo mode so contributors can explore the product without an API key. The repository also includes a consent-gated local Expo bootstrap companion, the FastAPI backend starter, and a Docker Compose contract for a local deployment.
 
 ## Run the frontend
 
@@ -13,6 +13,17 @@ pnpm dev
 ```
 
 Open `http://localhost:3000`.
+
+## Create the native Expo workspace
+
+The browser cannot silently install Node, Expo, native SDKs, or OS permissions. Review the dry run first, then pass all three explicit consent flags when you want the local companion to create the app environment:
+
+```bash
+pnpm mobile:bootstrap
+pnpm mobile:bootstrap -- --approve-install --allow-network --allow-storage
+```
+
+See [`mobile/README.md`](mobile/README.md) and [`docs/mobile-builder.md`](docs/mobile-builder.md) for the trust boundary, Ollama mode, Expo Go QR preview, and GitHub connector model.
 
 ## Self-host with Docker
 

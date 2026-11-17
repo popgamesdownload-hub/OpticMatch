@@ -51,3 +51,9 @@ The UI is deliberately functional without a provider key: generation is represen
 
 ## Build and serving
 The frontend is built with Vite and serves on port 3000. The Docker image builds the frontend and serves it with the lightweight Node preview server. The `backend/` folder can be run independently with FastAPI for a real deployment; the compose file mounts `data/` for SQLite and local media. API integration points remain provider-neutral and do not ship secrets to the browser.
+
+## Mobile-builder extension
+
+The repository now includes a portrait-first mobile control plane that behaves like an installed app rather than a desktop dashboard. Its bottom navigation separates Build, Preview, Access, and Project. Build uses interactive provider cards for cloud BYOK and local Ollama. Access shows permission toggles and a storage budget before the user starts a runtime. Preview explains the Expo Go QR handoff, while Project makes the GitHub sync boundary and local bootstrap status visible.
+
+Because browsers cannot install software or grant OS permissions silently, the native setup is consent-gated. `scripts/bootstrap-mobile.mjs` defaults to a dry run and requires `--approve-install --allow-network --allow-storage` before creating an Expo Router starter. Expo is the default fast-preview target; SwiftUI and Kotlin/Jetpack Compose are documented as alternative native renderers against the same local API and storage contract.
